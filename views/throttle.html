@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="panel" style="background-color: #999;width:300px;height:200px;"></div>
+  <script>
+    //节流函数
+    function throttle(fn,threshhold = 160){
+      var timer = null , start = new Date
+      return function(){
+        var context = this , args = arguments ,curr = new Date() - 0
+        clearTimeout(timer)
+        if(curr - start >= threshhold){
+          console.log('now',curr,curr-start)
+          fn.apply(context,args)
+          start = curr
+        }else{
+          timer = setTimeout(() => {
+            fn.apply(context,args)
+          }, threshhold);
+        }
+      }
+    }
+    var mousemove = throttle(function(e){
+      console.log(e.pageX,e.pageY)
+    })
+    document.querySelector('#panel').addEventListener('mousemove',mousemove)
+  </script>
+</body>
+</html>

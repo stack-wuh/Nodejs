@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html, body {
+            width: 100%;
+            overflow-x: hidden;
+        }
+        .lazy-box {
+            width: 100%;
+            border: 1px solid lightblue;
+        }
+        .js-add-pupop {
+            width: 60px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 4px;
+            background-color: #eee;
+            color: #333;
+            user-select: none;
+
+            animation: 1.5s slide forwards cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .js-move_2_rg {
+            animation: 1s move cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+        }
+        .js-move_2-re {
+            animation: 1s move cubic-bezier(0.075, 0.82, 0.165, 1) forwards reverse;
+        }
+        .js-move_2_lf {
+           animation: 1s move_lf cubic-bezier(0.165, 0.84, 0.44, 1) forwards; 
+        }
+        @keyframes move {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes move_lf {
+            0% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slide {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(30%) translateY(-80%);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="lazy-box" style="height: 500px"><img style="width: 100%;" src="https://cn.bing.com/images/search?q=%e8%a5%bf%e6%b9%96%e8%8d%b7%e8%8a%b1%e6%b8%90%e6%ac%a1%e5%bc%80&FORM=ISTRTH&id=1707D4D697D1EADD9EC1C75560CA0981C312754A&cat=%E4%BB%8A%E6%97%A5%E7%83%AD%E5%9B%BE&lpversion=" alt="lazy1"></div>
+    <div class="lazy-box" style="height: 500px"><img style="width: 100%;" src="https://cn.bing.com/images/search?q=%e8%a5%bf%e6%b9%96%e8%8d%b7%e8%8a%b1%e6%b8%90%e6%ac%a1%e5%bc%80&FORM=ISTRTH&id=1707D4D697D1EADD9EC1C75560CA0981C312754A&cat=%E4%BB%8A%E6%97%A5%E7%83%AD%E5%9B%BE&lpversion=" alt="lazy2"></div>
+    <div class="lazy-box" style="height: 500px"><img style="width: 100%;" src="https://cn.bing.com/images/search?q=%e8%a5%bf%e6%b9%96%e8%8d%b7%e8%8a%b1%e6%b8%90%e6%ac%a1%e5%bc%80&FORM=ISTRTH&id=1707D4D697D1EADD9EC1C75560CA0981C312754A&cat=%E4%BB%8A%E6%97%A5%E7%83%AD%E5%9B%BE&lpversion=" alt="lazy3"></div>
+    <div class="lazy-box" style="height: 500px"><img style="width: 100%;" src="https://cn.bing.com/images/search?q=%e8%a5%bf%e6%b9%96%e8%8d%b7%e8%8a%b1%e6%b8%90%e6%ac%a1%e5%bc%80&FORM=ISTRTH&id=1707D4D697D1EADD9EC1C75560CA0981C312754A&cat=%E4%BB%8A%E6%97%A5%E7%83%AD%E5%9B%BE&lpversion=" alt="lazy4"></div>
+    
+    <script src="../utils/lazyLoad.js"></script>
+    <script src="../utils/pupop.js"></script>
+    <script>
+
+    </script>
+</body>
+</html>

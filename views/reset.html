@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>移动端适配</title>
+
+  <script type="text/javascript">
+    (function(doc, win) {
+      var docElm = doc.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        recalc = function() {
+          var clientWidth = docElm.clientWidth;
+          if (!clientWidth) return
+          docElm.style.fontSize = 20 * (clientWidth / 375) + 'px'
+          console.log(20 * (clientWidth / 375))
+        }
+      recalc()
+      if (!doc.addEventListener) return
+      win.addEventListener(resizeEvt, recalc, false)
+    })(document, window)
+  </script>
+</head>
+
+<body>
+  <h3>这个是移动端适配的demo</h3>
+  <span style="font-size: .8rem;">这个是16px大小</span>
+</body>
+
+</html>

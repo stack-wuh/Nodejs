@@ -1,0 +1,8 @@
+hello , welcome to nodejs
+
+this is a test content for text output1.txt
+这里是我要添加进文件的消息内容
+ 这里添加一条换行符这里是我要添加进文件的消息内容
+ 这里添加一条换行符这里是我要添加进文件的消息内容
+ 这里添加一条换行符这里是我要添加进文件的消息内容
+ 这里添加一条换行符

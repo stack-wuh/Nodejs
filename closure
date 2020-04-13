@@ -1,0 +1,53 @@
+function f1(){
+	var n = 999
+	function f2(){
+		console.log(n)
+	}
+	return f2;
+}
+var result =f1()
+result()
+
+var name = 'The Window'
+var nameobj = {
+	name:'the window'
+}
+var obj1 = {
+	name:'aaa'
+}
+
+/**
+ * 关于闭包的思考题
+ * 什么是闭包? 解决了浏览器内部的垃圾回收机制,将上一级函数的变量再次引用, 避免了变量的回收
+ * 闭包闭包? 三要素: 函数(Func), 返回值(return), 变量 (el)
+ * 闭包的内部运行机制, this指向, context 执行上下文
+ * @type {{name: string, getNameFunc: (function(): function(): string)}}
+ */
+var object ={
+	name : 'my Object1',
+	getNameFunc:function(){
+		return function(){
+			return this.name
+		}
+	}
+}
+var obj ={
+	name:'my Object2',
+	getNameFunc:function(){
+		var that  = this
+		return function(){
+			return that.name
+		}
+	}
+}
+var temp = object.getNameFunc()
+var name1 = temp.call(nameobj)
+console.log(name1)
+
+
+console.log(object.getNameFunc()())
+console.log(object.getNameFunc().call(object))
+console.log(obj.getNameFunc()())
+
+console.log('------')
+
